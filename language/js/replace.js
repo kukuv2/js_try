@@ -1,6 +1,6 @@
-var a = 'aa; .aa bb;bb'
+var a = 'Yes. aa; .aa bb;bb'
 
-var result = a.replace(/[,.;]/g,function(match,offset,string){
+var result = a.replace(/[,.;:"~!@#$%\^&*()\-_+=\[\]|\\{}<>?\/]/g,function(match,offset,string){
     if(!/\s/.test(string.substr(offset-1,1))){
         match = ' ' + match
     }
@@ -10,3 +10,4 @@ var result = a.replace(/[,.;]/g,function(match,offset,string){
     return match
 })
 console.log(result);
+console.log(result.split(' '));
